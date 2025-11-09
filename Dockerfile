@@ -3,6 +3,7 @@ FROM eclipse-temurin:17
 # Crear usuario/grupo no-root con UID/GID numéricos
 RUN groupadd -g 10001 app && \
     useradd  -u 10001 -g app -s /usr/sbin/nologin -m app
+    
 
 WORKDIR /app
 
@@ -20,5 +21,6 @@ ENTRYPOINT ["java","-jar","/app/app.jar"]
 #WORKDIR /app
 #COPY target/*.jar app.jar
 #ENTRYPOINT ["java", "-jar", "app.jar"]
+
 
 
